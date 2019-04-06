@@ -11,6 +11,28 @@ install:
   - npm uninstall tslint --no-save
   - npm install
 
+jobs:
+  include:
+    - stage: "Test"
+      script: 
+        - yarn test
+    - stage: "Quality"
+      language: java
+      branches:
+        only:
+          - master
+      dist: trusty
+      addons:
+        sonarcloud:
+          organization: "sonarcloud_organization_key"
+          token:
+            secure: $SONAR_TOKEN
+      script:
+        - sonar-scanner
+    - stage: "Build"
+      script: 
+        - yarn build
+
 cache:
   directories:
     - node_modules
