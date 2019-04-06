@@ -1,0 +1,24 @@
+{
+  "name": "gshell-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@gshell/express": "0.0.6",
+    "@gshell/mongodb": "0.0.4",
+    "@gshell/types": "0.0.3",
+    "ts-node": "8.0.3",
+    "typescript": "3.4.2"
+  },
+  "devDependencies": {
+    "tsc": "^1.20150623.0"
+  }
+}
