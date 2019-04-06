@@ -4,8 +4,4 @@ import GMongoDB from "@gshell/mongodb";
 const test = new GExpress({port: 3000}, []);
 const testMongo = new GMongoDB({uri: "mongodb://root:toor123@ds133256.mlab.com:33256/gshell", name: "gshell"});
 
-test.up().then().catch(err=>console.log(err));
-testMongo.up().then(err=>{console.log(testMongo.getDb().collection("test").find({}).toArray())}).catch(err=>console.log(err));
-
-console.log("Test!");
-
+test.up().then(()=>console.log('UP')).catch(err=>console.log(err));
